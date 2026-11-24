@@ -1,0 +1,1272 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每天比赛在线观看 - 免费高清赛事视频平台 | 每日赛场官方频道</title>
+<meta name="description" content="每天比赛在线观看免费视频品牌官方网站，汇聚每日赛事回放、赛前分析、选手访谈与社区创作内容，打造值得信赖的免费高清体育内容生态。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f2038'/%3E%3Ccircle cx='32' cy='32' r='16' fill='none' stroke='%2336e3b0' stroke-width='4'/%3E%3Cpath d='M26 24l16 8-16 8z' fill='%2336e3b0'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --dc-bg:#0b1524;
+    --dc-bg-2:#101f33;
+    --dc-panel:#132a44;
+    --dc-panel-2:#0e1d30;
+    --dc-line:rgba(120,170,220,.18);
+    --dc-text:#e8f1fb;
+    --dc-muted:#9db2c9;
+    --dc-accent:#36e3b0;
+    --dc-accent-2:#4aa8ff;
+    --dc-warn:#ffcf5c;
+    --dc-radius:16px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(1200px 600px at 85% -10%, rgba(74,168,255,.18), transparent 60%),
+      radial-gradient(900px 500px at 5% 0%, rgba(54,227,176,.12), transparent 55%),
+      var(--dc-bg);
+    color:var(--dc-text);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  h1,h2,h3,h4{margin:0 0 .5em;line-height:1.3;font-weight:700;}
+  p{margin:0 0 1em;}
+  ul{margin:0;padding:0;list-style:none;}
+  button{font-family:inherit;cursor:pointer;}
+  .dc-wrap{width:min(1180px,92vw);margin:0 auto;}
+  .dc-scroll-offset{scroll-margin-top:150px;}
+
+  /* 吸顶：公告条 + 页头 */
+  .dc-sticky-shell{
+    position:sticky;top:0;z-index:90;
+    backdrop-filter:blur(14px);
+    background:linear-gradient(180deg, rgba(11,21,36,.96), rgba(11,21,36,.9));
+    border-bottom:1px solid var(--dc-line);
+  }
+  .dc-notice-bar{
+    background:linear-gradient(90deg, rgba(54,227,176,.16), rgba(74,168,255,.16));
+    border-bottom:1px solid var(--dc-line);
+    font-size:13.5px;
+    padding:9px 0;
+  }
+  .dc-notice-inner{display:flex;gap:14px;align-items:center;flex-wrap:wrap;}
+  .dc-notice-tag{
+    flex:0 0 auto;font-size:12px;font-weight:700;
+    background:var(--dc-accent);color:#04231a;
+    padding:2px 10px;border-radius:999px;letter-spacing:.5px;
+  }
+  .dc-notice-list{display:flex;gap:22px;flex-wrap:wrap;color:var(--dc-muted);}
+  .dc-notice-list strong{color:var(--dc-text);font-weight:600;}
+  .dc-notice-live{color:var(--dc-accent);font-weight:700;}
+
+  .dc-header{display:flex;align-items:center;gap:20px;padding:14px 0;}
+  .dc-brand{display:flex;align-items:center;gap:11px;flex:0 0 auto;}
+  .dc-brand-mark{
+    width:40px;height:40px;border-radius:12px;
+    background:linear-gradient(140deg,var(--dc-accent),var(--dc-accent-2));
+    display:grid;place-items:center;color:#04121f;font-weight:800;font-size:18px;
+    box-shadow:0 6px 20px rgba(54,227,176,.3);
+  }
+  .dc-brand-text strong{display:block;font-size:16.5px;letter-spacing:.5px;}
+  .dc-brand-text span{font-size:11.5px;color:var(--dc-muted);letter-spacing:2px;}
+
+  .dc-nav{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto;align-items:center;}
+  .dc-nav a{
+    font-size:14.5px;color:var(--dc-muted);padding:7px 13px;border-radius:9px;
+    transition:.18s;
+  }
+  .dc-nav a:hover{color:var(--dc-text);background:rgba(74,168,255,.12);}
+  .dc-nav a.dc-current{color:var(--dc-accent);background:rgba(54,227,176,.1);}
+
+  .dc-search{display:flex;align-items:center;gap:6px;position:relative;flex:0 0 auto;}
+  .dc-search input{
+    width:200px;background:var(--dc-panel-2);border:1px solid var(--dc-line);
+    color:var(--dc-text);border-radius:10px;padding:9px 12px;font-size:13.5px;outline:none;
+    transition:.18s;
+  }
+  .dc-search input:focus{border-color:var(--dc-accent);box-shadow:0 0 0 3px rgba(54,227,176,.14);}
+  .dc-search button{
+    background:var(--dc-accent);color:#04231a;border:0;border-radius:10px;
+    padding:9px 14px;font-weight:700;font-size:13.5px;
+  }
+  .dc-search-hint{
+    position:absolute;top:calc(100% + 8px);left:0;right:0;
+    background:var(--dc-panel);border:1px solid var(--dc-line);border-radius:12px;
+    padding:10px 12px;font-size:12.5px;color:var(--dc-muted);
+    display:none;box-shadow:0 18px 40px rgba(0,0,0,.45);
+  }
+  .dc-search-hint.dc-show{display:block;}
+  .dc-search-hint b{color:var(--dc-accent);}
+  .dc-menu-toggle{
+    display:none;background:var(--dc-panel);border:1px solid var(--dc-line);
+    color:var(--dc-text);border-radius:10px;padding:9px 13px;font-size:14px;
+  }
+
+  /* 首屏 */
+  .dc-hero{padding:52px 0 40px;border-bottom:1px solid var(--dc-line);}
+  .dc-hero-grid{
+    display:grid;grid-template-columns:minmax(0,4fr) minmax(0,6fr);
+    gap:38px;align-items:center;
+  }
+  .dc-hero-eyebrow{
+    display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:2px;
+    color:var(--dc-accent);border:1px solid rgba(54,227,176,.4);
+    padding:4px 12px;border-radius:999px;margin-bottom:18px;
+  }
+  .dc-hero h1{font-size:clamp(34px,4.6vw,58px);letter-spacing:1px;line-height:1.14;}
+  .dc-hero h1 em{
+    font-style:normal;
+    background:linear-gradient(100deg,var(--dc-accent),var(--dc-accent-2));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .dc-hero-lead{font-size:16px;color:#c3d4e6;max-width:38em;}
+  .dc-hero-intro{
+    font-size:14.5px;color:var(--dc-muted);border-left:3px solid var(--dc-accent);
+    padding-left:14px;background:rgba(19,42,68,.5);border-radius:0 10px 10px 0;padding:12px 14px;
+  }
+  .dc-hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;}
+  .dc-btn{
+    border-radius:11px;padding:12px 22px;font-size:14.5px;font-weight:700;
+    border:1px solid transparent;transition:.2s;display:inline-flex;align-items:center;gap:8px;
+  }
+  .dc-btn-primary{background:linear-gradient(120deg,var(--dc-accent),#22c9a8);color:#04231a;}
+  .dc-btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(54,227,176,.3);}
+  .dc-btn-ghost{background:rgba(19,42,68,.7);border-color:var(--dc-line);color:var(--dc-text);}
+  .dc-btn-ghost:hover{border-color:var(--dc-accent-2);color:#fff;}
+  .dc-stats{
+    display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:30px;
+  }
+  .dc-stat{
+    background:linear-gradient(160deg,rgba(19,42,68,.92),rgba(14,29,48,.92));
+    border:1px solid var(--dc-line);border-radius:14px;padding:14px 16px;
+  }
+  .dc-stat b{display:block;font-size:23px;color:var(--dc-accent);letter-spacing:.5px;}
+  .dc-stat span{font-size:12.5px;color:var(--dc-muted);}
+
+  .dc-hero-visual{position:relative;}
+  .dc-hero-visual figure{margin:0;border-radius:20px;overflow:hidden;border:1px solid var(--dc-line);box-shadow:0 30px 60px rgba(0,0,0,.5);}
+  .dc-hero-badge{
+    position:absolute;left:18px;top:18px;background:rgba(4,18,31,.82);
+    border:1px solid var(--dc-line);border-radius:999px;padding:6px 14px;font-size:12.5px;
+    color:var(--dc-accent);font-weight:700;letter-spacing:1px;display:flex;gap:8px;align-items:center;
+  }
+  .dc-dot-live{width:8px;height:8px;border-radius:50%;background:#ff5a6e;box-shadow:0 0 0 4px rgba(255,90,110,.22);animation:dcPulse 1.6s infinite;}
+  @keyframes dcPulse{0%,100%{opacity:1}50%{opacity:.35}}
+  .dc-hero-strip{
+    margin-top:16px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;
+  }
+  .dc-hero-strip a{
+    background:rgba(19,42,68,.6);border:1px solid var(--dc-line);border-radius:12px;
+    padding:10px 12px;font-size:12.8px;color:var(--dc-muted);transition:.18s;
+  }
+  .dc-hero-strip a:hover{border-color:var(--dc-accent);color:var(--dc-text);}
+  .dc-hero-strip b{display:block;color:var(--dc-text);font-size:13.4px;margin-bottom:2px;}
+
+  /* 通用 section */
+  .dc-section{padding:56px 0;border-bottom:1px solid var(--dc-line);}
+  .dc-section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:26px;}
+  .dc-section-head h2{font-size:clamp(22px,2.6vw,30px);margin:0;letter-spacing:.5px;}
+  .dc-section-head p{margin:6px 0 0;color:var(--dc-muted);font-size:14px;max-width:52em;}
+  .dc-kicker{font-size:12px;letter-spacing:3px;color:var(--dc-accent-2);text-transform:uppercase;display:block;margin-bottom:6px;}
+
+  /* 焦点内容 + 列表 */
+  .dc-focus-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:26px;align-items:start;}
+  .dc-feature-card{
+    background:linear-gradient(165deg,var(--dc-panel),var(--dc-panel-2));
+    border:1px solid var(--dc-line);border-radius:var(--dc-radius);overflow:hidden;
+    transition:.22s;
+  }
+  .dc-feature-card:hover{transform:translateY(-4px);border-color:rgba(54,227,176,.5);box-shadow:0 22px 48px rgba(0,0,0,.45);}
+  .dc-feature-card .dc-cover{aspect-ratio:16/9;overflow:hidden;}
+  .dc-feature-body{padding:18px 20px 20px;}
+  .dc-tag-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+  .dc-tag{
+    font-size:11.5px;padding:2px 9px;border-radius:999px;
+    background:rgba(74,168,255,.14);color:#a9d3ff;border:1px solid rgba(74,168,255,.25);
+  }
+  .dc-tag.dc-tag-green{background:rgba(54,227,176,.13);color:var(--dc-accent);border-color:rgba(54,227,176,.3);}
+  .dc-feature-body h3{font-size:19px;}
+  .dc-meta{font-size:12.5px;color:var(--dc-muted);display:flex;gap:14px;flex-wrap:wrap;margin:8px 0 12px;}
+  .dc-brief{font-size:14px;color:#bccfe2;}
+
+  .dc-video-list{display:flex;flex-direction:column;gap:0;}
+  .dc-video-item{
+    display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;
+    padding:16px 4px;border-bottom:1px dashed var(--dc-line);
+  }
+  .dc-video-item:last-child{border-bottom:0;}
+  .dc-video-rank{
+    width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
+    font-weight:800;font-size:14px;background:rgba(74,168,255,.14);color:#a9d3ff;border:1px solid rgba(74,168,255,.28);
+    flex:0 0 auto;
+  }
+  .dc-video-item:nth-child(1) .dc-video-rank{background:rgba(54,227,176,.16);color:var(--dc-accent);border-color:rgba(54,227,176,.34);}
+  .dc-video-item h3{font-size:16px;margin-bottom:4px;}
+  .dc-video-item p{font-size:13.2px;color:var(--dc-muted);margin:0 0 8px;}
+  .dc-video-foot{display:flex;gap:14px;flex-wrap:wrap;align-items:center;font-size:12.4px;color:var(--dc-muted);}
+  .dc-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px;}
+  .dc-mini-btn{
+    background:rgba(19,42,68,.85);border:1px solid var(--dc-line);color:var(--dc-muted);
+    border-radius:8px;padding:5px 11px;font-size:12.2px;transition:.16s;
+    display:inline-flex;align-items:center;gap:5px;
+  }
+  .dc-mini-btn:hover{color:var(--dc-text);border-color:var(--dc-accent-2);}
+  .dc-mini-btn.dc-active{color:var(--dc-accent);border-color:rgba(54,227,176,.5);background:rgba(54,227,176,.1);}
+
+  /* 品牌解析（长文） */
+  .dc-article{max-width:62em;}
+  .dc-article h2{margin-bottom:18px;}
+  .dc-article h3{font-size:19px;margin-top:30px;color:#d6e6f6;position:relative;padding-left:16px;}
+  .dc-article h3::before{
+    content:"";position:absolute;left:0;top:.42em;width:6px;height:18px;border-radius:4px;
+    background:linear-gradient(180deg,var(--dc-accent),var(--dc-accent-2));
+  }
+  .dc-article p{color:#c2d3e5;font-size:15px;}
+  .dc-article strong{color:var(--dc-accent);font-weight:700;}
+  .dc-article-extra{
+    margin-top:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;
+  }
+  .dc-note-card{
+    background:linear-gradient(160deg,rgba(19,42,68,.9),rgba(14,29,48,.9));
+    border:1px solid var(--dc-line);border-radius:14px;padding:16px 18px;
+  }
+  .dc-note-card h4{font-size:14.5px;color:var(--dc-accent);margin-bottom:6px;}
+  .dc-note-card p{font-size:13.2px;color:var(--dc-muted);margin:0;}
+
+  /* 专题 */
+  .dc-topic-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;align-items:start;}
+  .dc-topic{
+    background:linear-gradient(170deg,var(--dc-panel),var(--dc-panel-2));
+    border:1px solid var(--dc-line);border-radius:var(--dc-radius);padding:20px;
+    display:flex;flex-direction:column;gap:12px;transition:.2s;
+  }
+  .dc-topic:hover{border-color:rgba(74,168,255,.45);}
+  .dc-topic-media{border-radius:12px;overflow:hidden;aspect-ratio:16/9;border:1px solid var(--dc-line);}
+  .dc-topic-status{
+    font-size:11.8px;color:var(--dc-warn);border:1px solid rgba(255,207,92,.36);
+    background:rgba(255,207,92,.1);padding:2px 9px;border-radius:999px;align-self:flex-start;
+  }
+  .dc-topic h3{font-size:17px;}
+  .dc-topic > p{font-size:13.4px;color:var(--dc-muted);margin:0;}
+  .dc-topic ol{margin:0;padding-left:18px;color:#b9cce0;font-size:13.4px;display:flex;flex-direction:column;gap:6px;}
+  .dc-topic ol li::marker{color:var(--dc-accent);}
+
+  /* 作者矩阵 双列简介 */
+  .dc-author-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;}
+  .dc-author-card{
+    background:linear-gradient(165deg,rgba(19,42,68,.92),rgba(14,29,48,.92));
+    border:1px solid var(--dc-line);border-radius:16px;padding:18px 20px;
+    display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;transition:.2s;
+  }
+  .dc-author-card:hover{border-color:rgba(54,227,176,.45);transform:translateY(-3px);}
+  .dc-avatar{
+    width:52px;height:52px;border-radius:14px;display:grid;place-items:center;
+    font-weight:800;font-size:19px;color:#04121f;flex:0 0 auto;
+  }
+  .dc-author-name{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
+  .dc-author-name b{font-size:15.5px;}
+  .dc-author-name span{font-size:11.6px;color:var(--dc-accent);border:1px solid rgba(54,227,176,.35);padding:1px 8px;border-radius:999px;}
+  .dc-author-body p{font-size:13.2px;color:var(--dc-muted);margin:6px 0 8px;}
+  .dc-author-facts{display:flex;gap:14px;flex-wrap:wrap;font-size:12.3px;color:#a9c1d8;}
+  .dc-author-facts b{color:var(--dc-text);}
+
+  /* 评论区 双列短评 */
+  .dc-comment-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+  .dc-comment{
+    background:rgba(16,31,51,.8);border:1px solid var(--dc-line);border-radius:14px;
+    padding:16px 18px;font-size:14px;color:#c2d3e5;transition:.18s;
+  }
+  .dc-comment:hover{border-color:rgba(74,168,255,.42);}
+  .dc-comment-top{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:7px;}
+  .dc-comment-top b{font-size:13.8px;color:var(--dc-text);}
+  .dc-comment-top span{font-size:12px;color:var(--dc-muted);}
+  .dc-stars{color:var(--dc-warn);font-size:12.5px;letter-spacing:1px;}
+  .dc-score-summary{
+    display:grid;grid-template-columns:auto minmax(0,1fr);gap:22px;align-items:center;
+    background:linear-gradient(150deg,rgba(19,42,68,.95),rgba(14,29,48,.95));
+    border:1px solid var(--dc-line);border-radius:16px;padding:22px 24px;margin-bottom:22px;
+  }
+  .dc-score-big{text-align:center;}
+  .dc-score-big b{font-size:42px;color:var(--dc-accent);display:block;line-height:1;}
+  .dc-score-big span{font-size:12px;color:var(--dc-muted);}
+  .dc-score-bars{display:flex;flex-direction:column;gap:7px;font-size:12.4px;color:var(--dc-muted);}
+  .dc-bar{display:grid;grid-template-columns:52px minmax(0,1fr) 34px;gap:10px;align-items:center;}
+  .dc-bar-track{height:8px;border-radius:99px;background:rgba(74,168,255,.13);overflow:hidden;}
+  .dc-bar-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--dc-accent),var(--dc-accent-2));}
+
+  /* 动态 */
+  .dc-news-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;}
+  .dc-news-item{
+    border:1px solid var(--dc-line);border-radius:14px;padding:16px 18px;
+    background:rgba(16,31,51,.62);
+  }
+  .dc-news-item time{font-size:12px;color:var(--dc-accent-2);letter-spacing:.5px;}
+  .dc-news-item h3{font-size:15.5px;margin:7px 0 6px;}
+  .dc-news-item p{font-size:13.2px;color:var(--dc-muted);margin:0;}
+
+  /* 灵感 / 投稿 */
+  .dc-inspire-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:26px;align-items:start;}
+  .dc-inspire-list{display:flex;flex-direction:column;gap:12px;}
+  .dc-inspire-item{
+    display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start;
+    border:1px solid var(--dc-line);border-radius:12px;padding:13px 15px;background:rgba(19,42,68,.5);
+  }
+  .dc-inspire-item b{display:block;font-size:14.4px;margin-bottom:3px;}
+  .dc-inspire-item p{font-size:12.9px;color:var(--dc-muted);margin:0;}
+  .dc-icon-chip{
+    width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-size:15px;
+    background:rgba(54,227,176,.13);color:var(--dc-accent);border:1px solid rgba(54,227,176,.3);
+  }
+  .dc-submit-card{
+    background:linear-gradient(160deg,rgba(54,227,176,.12),rgba(74,168,255,.1));
+    border:1px solid rgba(54,227,176,.3);border-radius:16px;padding:22px;
+  }
+  .dc-submit-card h3{font-size:18px;}
+  .dc-submit-card p{font-size:13.6px;color:#c3d4e6;}
+  .dc-submit-card ul{display:flex;flex-direction:column;gap:8px;margin:12px 0 18px;font-size:13.4px;color:#c3d4e6;}
+  .dc-submit-card li::before{content:"▸ ";color:var(--dc-accent);}
+
+  /* FAQ */
+  .dc-faq{display:flex;flex-direction:column;gap:10px;max-width:62em;}
+  .dc-faq details{
+    border:1px solid var(--dc-line);border-radius:12px;background:rgba(16,31,51,.66);
+    padding:0 18px;transition:.18s;
+  }
+  .dc-faq details[open]{border-color:rgba(54,227,176,.42);background:rgba(19,42,68,.7);}
+  .dc-faq summary{
+    cursor:pointer;padding:15px 0;font-size:14.8px;font-weight:600;list-style:none;
+    display:flex;justify-content:space-between;gap:14px;align-items:center;
+  }
+  .dc-faq summary::-webkit-details-marker{display:none;}
+  .dc-faq summary::after{content:"+";color:var(--dc-accent);font-size:20px;line-height:1;flex:0 0 auto;}
+  .dc-faq details[open] summary::after{content:"−";}
+  .dc-faq p{font-size:13.6px;color:var(--dc-muted);margin:0 0 16px;}
+
+  /* 页脚 */
+  .dc-footer{padding:48px 0 34px;background:linear-gradient(180deg,rgba(11,21,36,.4),rgba(8,16,28,.96));}
+  .dc-footer-grid{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:28px;}
+  .dc-footer h4{font-size:14px;color:var(--dc-text);margin-bottom:12px;}
+  .dc-footer p,.dc-footer li{font-size:13.2px;color:var(--dc-muted);}
+  .dc-footer li{margin-bottom:8px;}
+  .dc-footer a:hover{color:var(--dc-accent);}
+  .dc-footer-bottom{
+    margin-top:30px;padding-top:18px;border-top:1px solid var(--dc-line);
+    display:flex;gap:14px;justify-content:space-between;flex-wrap:wrap;font-size:12.5px;color:var(--dc-muted);
+  }
+
+  /* 弹窗 & Toast */
+  .dc-modal-mask{
+    position:fixed;inset:0;background:rgba(3,10,20,.72);backdrop-filter:blur(6px);
+    display:none;place-items:center;padding:24px;z-index:200;
+  }
+  .dc-modal-mask.dc-show{display:grid;}
+  .dc-modal{
+    width:min(560px,100%);max-height:82vh;overflow:auto;
+    background:linear-gradient(165deg,var(--dc-panel),var(--dc-panel-2));
+    border:1px solid var(--dc-line);border-radius:18px;padding:24px;
+    box-shadow:0 40px 80px rgba(0,0,0,.6);
+  }
+  .dc-modal h3{font-size:19px;margin-bottom:8px;}
+  .dc-modal p{font-size:13.8px;color:var(--dc-muted);}
+  .dc-modal-close{
+    margin-top:18px;background:var(--dc-accent);color:#04231a;border:0;border-radius:10px;
+    padding:10px 20px;font-weight:700;font-size:14px;
+  }
+  .dc-toast{
+    position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);
+    background:rgba(8,20,34,.96);border:1px solid rgba(54,227,176,.45);color:var(--dc-text);
+    padding:11px 22px;border-radius:999px;font-size:13.6px;z-index:300;
+    opacity:0;pointer-events:none;transition:.26s;
+  }
+  .dc-toast.dc-show{opacity:1;transform:translate(-50%,0);}
+
+  .dc-to-top{
+    position:fixed;right:22px;bottom:26px;width:44px;height:44px;border-radius:13px;
+    background:rgba(19,42,68,.92);border:1px solid var(--dc-line);color:var(--dc-accent);
+    display:grid;place-items:center;font-size:17px;z-index:120;opacity:0;pointer-events:none;transition:.24s;
+  }
+  .dc-to-top.dc-show{opacity:1;pointer-events:auto;}
+  .dc-to-top:hover{border-color:var(--dc-accent);}
+
+  @media (max-width:980px){
+    .dc-hero-grid{grid-template-columns:minmax(0,1fr);}
+    .dc-focus-layout{grid-template-columns:minmax(0,1fr);}
+    .dc-inspire-grid{grid-template-columns:minmax(0,1fr);}
+    .dc-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .dc-search input{width:150px;}
+  }
+  @media (max-width:760px){
+    .dc-menu-toggle{display:inline-flex;}
+    .dc-header{flex-wrap:wrap;}
+    .dc-nav{
+      display:none;order:5;width:100%;margin-left:0;padding-top:10px;
+      border-top:1px solid var(--dc-line);flex-direction:column;align-items:stretch;
+    }
+    .dc-nav.dc-open{display:flex;}
+    .dc-nav a{padding:10px 12px;}
+    .dc-search{margin-left:auto;}
+    .dc-search input{width:130px;}
+    .dc-notice-list{gap:12px;font-size:12.5px;}
+    .dc-stats{grid-template-columns:minmax(0,1fr);}
+    .dc-hero-strip{grid-template-columns:minmax(0,1fr);}
+    .dc-score-summary{grid-template-columns:minmax(0,1fr);}
+    .dc-footer-grid{grid-template-columns:minmax(0,1fr);}
+  }
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="dc-sticky-shell">
+  <div class="dc-notice-bar">
+    <div class="dc-wrap dc-notice-inner">
+      <span class="dc-notice-tag">今日更新</span>
+      <div class="dc-notice-list">
+        <span><strong>11月22日赛程</strong>已上线：城市联赛第14轮 6 场全场回放</span>
+        <span><strong>新增</strong>「每日赛前 10 分钟」解析专栏，免费观看</span>
+        <span class="dc-notice-live">● 正在直播 3 场</span>
+      </div>
+    </div>
+  </div>
+
+  <header class="dc-wrap dc-header">
+    <div class="dc-brand">
+      <div class="dc-brand-mark">每</div>
+      <div class="dc-brand-text">
+        <strong>每日赛场</strong>
+        <span>DAILY ARENA</span>
+      </div>
+    </div>
+    <button class="dc-menu-toggle" id="dcMenuToggle" aria-expanded="false" aria-controls="dcMainNav">菜单 ☰</button>
+    <nav class="dc-nav" id="dcMainNav" aria-label="主导航">
+      <a href="#dcHero" class="dc-current">首页</a>
+      <a href="#dcFocus">今日焦点</a>
+      <a href="#dcArticle">品牌解读</a>
+      <a href="#dcTopics">专题企划</a>
+      <a href="#dcAuthors">创作者</a>
+      <a href="#dcComments">社区口碑</a>
+      <a href="#dcFaq">帮助中心</a>
+    </nav>
+    <div class="dc-search">
+      <input type="search" id="dcSearchInput" placeholder="搜索比赛、选手、专题" aria-label="站内搜索">
+      <button id="dcSearchBtn">搜索</button>
+      <div class="dc-search-hint" id="dcSearchHint"></div>
+    </div>
+  </header>
+</div>
+
+<main>
+
+  <!-- S2 首屏 -->
+  <section class="dc-hero dc-scroll-offset" id="dcHero">
+    <div class="dc-wrap dc-hero-grid">
+      <div>
+        <span class="dc-hero-eyebrow">官方视频门户 · 免费高清</span>
+        <h1>每天比赛<em>在线观看</em></h1>
+        <p class="dc-hero-lead">每天比赛在线观看的官方品牌频道，把一天里最值得看的对局、最动人的赛场瞬间，用高清正版影像完整留存。从开赛哨响到谢幕致意，我们与每一位观众和创作者一起，把比赛日过成节日。</p>
+        <p class="dc-hero-intro">每日赛场是一家专注于赛事影像的垂直领域内容平台，官网汇聚每日回放、赛前解析、选手访谈与创作社区。我们坚持原创与正版授权，以专业转播、高清画质与稳定的内容生态，成为体育爱好者值得信赖的用户首选。</p>
+        <div class="dc-hero-actions">
+          <a class="dc-btn dc-btn-primary" href="#dcFocus">免费观看今日回放</a>
+          <a class="dc-btn dc-btn-ghost" href="#dcTopics">查看专题企划</a>
+          <a class="dc-btn dc-btn-ghost" href="#dcSubmit">我要投稿</a>
+        </div>
+        <div class="dc-stats">
+          <div class="dc-stat"><b>1280+</b><span>每日更新比赛视频</span></div>
+          <div class="dc-stat"><b>36 万</b><span>注册社区创作者</span></div>
+          <div class="dc-stat"><b>4.9 / 5</b><span>用户口碑综合评分</span></div>
+        </div>
+      </div>
+      <div class="dc-hero-visual">
+        <figure>
+          <svg viewBox="0 0 800 450" role="img" aria-label="夜幕球场灯光下的比赛现场主视觉，观众席与记分牌环绕">
+            <defs>
+              <linearGradient id="dcSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#071523"/><stop offset="1" stop-color="#123a52"/>
+              </linearGradient>
+              <linearGradient id="dcPitch" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#1c6b52"/><stop offset="1" stop-color="#0d3f31"/>
+              </linearGradient>
+              <radialGradient id="dcGlow" cx="50%" cy="0%" r="80%">
+                <stop offset="0" stop-color="#36e3b0" stop-opacity=".55"/><stop offset="1" stop-color="#36e3b0" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <rect width="800" height="450" fill="url(#dcSky)"/>
+            <rect width="800" height="450" fill="url(#dcGlow)"/>
+            <rect x="60" y="40" width="680" height="120" rx="10" fill="#0a1e2e" stroke="#204a63"/>
+            <g fill="#2f6b86">
+              <rect x="80" y="58" width="18" height="84"/><rect x="128" y="58" width="18" height="84"/>
+              <rect x="176" y="58" width="18" height="84"/><rect x="224" y="58" width="18" height="84"/>
+              <rect x="272" y="58" width="18" height="84"/><rect x="510" y="58" width="18" height="84"/>
+              <rect x="558" y="58" width="18" height="84"/><rect x="606" y="58" width="18" height="84"/>
+              <rect x="654" y="58" width="18" height="84"/><rect x="702" y="58" width="18" height="84"/>
+            </g>
+            <rect x="330" y="46" width="140" height="70" rx="8" fill="#04141f" stroke="#36e3b0" stroke-width="2"/>
+            <text x="400" y="76" fill="#36e3b0" font-size="22" font-family="monospace" text-anchor="middle">2 : 1</text>
+            <text x="400" y="102" fill="#9db2c9" font-size="13" font-family="monospace" text-anchor="middle">14:20 第 68 分钟</text>
+            <rect x="0" y="180" width="800" height="270" fill="url(#dcPitch)"/>
+            <g stroke="#5fe0bd" stroke-opacity=".5" fill="none" stroke-width="2">
+              <rect x="70" y="210" width="660" height="220" rx="6"/>
+              <line x1="70" y1="320" x2="730" y2="320"/>
+              <circle cx="400" cy="320" r="52"/>
+              <rect x="70" y="270" width="80" height="100"/>
+              <rect x="650" y="270" width="80" height="100"/>
+            </g>
+            <g fill="#36e3b0" opacity=".85">
+              <circle cx="300" cy="360" r="7"/><circle cx="360" cy="300" r="7"/>
+            </g>
+            <g fill="#4aa8ff" opacity=".85">
+              <circle cx="470" cy="345" r="7"/><circle cx="525" cy="290" r="7"/><circle cx="420" cy="250" r="7"/>
+            </g>
+            <g fill="#e8f1fb" opacity=".7">
+              <circle cx="400" cy="322" r="5"/>
+            </g>
+            <rect x="0" y="180" width="800" height="14" fill="#04141f" opacity=".65"/>
+            <text x="40" y="428" fill="#9db2c9" font-size="13" font-family="monospace">DAILY ARENA · LIVE FEED</text>
+          </svg>
+        </figure>
+        <div class="dc-hero-badge"><span class="dc-dot-live"></span>正在直播 · 城市联赛第 14 轮</div>
+        <div class="dc-hero-strip">
+          <a href="#dcFocus"><b>19:30 焦点战</b>常规赛种子队交锋</a>
+          <a href="#dcTopics"><b>赛后 30 分钟</b>选手更衣室访谈</a>
+          <a href="#dcComments"><b>社区打分</b>今日最受欢迎回放</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S3 焦点内容 + 视频列表 -->
+  <section class="dc-section dc-scroll-offset" id="dcFocus">
+    <div class="dc-wrap">
+      <div class="dc-section-head">
+        <div>
+          <span class="dc-kicker">Today Focus</span>
+          <h2>今天比赛在线观看的重点推荐</h2>
+          <p>每天比赛在线观看的精选内容由编辑团队与社区共同筛选，融合赛前解析、现场回放与赛后复盘，重点场次配有高清多机位版本，全部免费观看。</p>
+        </div>
+      </div>
+
+      <div class="dc-focus-layout">
+        <article class="dc-feature-card">
+          <div class="dc-cover">
+            <svg viewBox="0 0 640 360" role="img" aria-label="城市联赛第14轮焦点战开球瞬间的球场全景插画">
+              <defs>
+                <linearGradient id="dcFc1" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#0d2a44"/><stop offset="1" stop-color="#1b4f5e"/>
+                </linearGradient>
+              </defs>
+              <rect width="640" height="360" fill="url(#dcFc1)"/>
+              <g opacity=".55" stroke="#7fd8ff" stroke-width="1">
+                <line x1="0" y1="70" x2="640" y2="70"/><line x1="0" y1="130" x2="640" y2="130"/>
+                <line x1="0" y1="190" x2="640" y2="190"/><line x1="0" y1="250" x2="640" y2="250"/>
+              </g>
+              <ellipse cx="320" cy="300" rx="300" ry="66" fill="#0b3b31"/>
+              <ellipse cx="320" cy="300" rx="300" ry="66" fill="none" stroke="#36e3b0" stroke-opacity=".5"/>
+              <g>
+                <circle cx="250" cy="268" r="15" fill="#4aa8ff"/>
+                <rect x="243" y="278" width="14" height="26" rx="5" fill="#4aa8ff"/>
+                <circle cx="398" cy="252" r="15" fill="#ffcf5c"/>
+                <rect x="391" y="262" width="14" height="28" rx="5" fill="#ffcf5c"/>
+                <circle cx="322" cy="318" r="8" fill="#e8f1fb"/>
+              </g>
+              <g fill="#e8f1fb" opacity=".82">
+                <rect x="46" y="40" width="120" height="9" rx="4"/>
+                <rect x="46" y="60" width="76" height="9" rx="4"/>
+              </g>
+              <text x="46" y="104" fill="#36e3b0" font-size="15" font-family="monospace">ROUND 14 · MAIN EVENT</text>
+            </svg>
+          </div>
+          <div class="dc-feature-body">
+            <div class="dc-tag-row">
+              <span class="dc-tag dc-tag-green">今日必看</span>
+              <span class="dc-tag">高清回放</span>
+              <span class="dc-tag">免费观看</span>
+            </div>
+            <h3>城市联赛第 14 轮全场回放：最后 5 分钟的三种解法</h3>
+            <div class="dc-meta">
+              <span>作者 林北岸</span><span>时长 1:52:08</span><span>播放 24.6 万</span><span>收藏 1.8 万</span>
+            </div>
+            <p class="dc-brief">比赛在被压制的节奏里拉锯了整整四十五分钟，第 68 分钟的换人成为转折点。本场回放保留原始解说与多机位视角，并在关键回合处加入战术标注，适合想复盘细节的观众反复观看。</p>
+            <div class="dc-actions">
+              <button class="dc-mini-btn dc-like" data-count="12480">♥ 点赞 <span>1.2万</span></button>
+              <button class="dc-mini-btn dc-fav">☆ 收藏</button>
+              <button class="dc-mini-btn dc-share">复制链接</button>
+            </div>
+          </div>
+        </article>
+
+        <div class="dc-video-list">
+          <article class="dc-video-item">
+            <div class="dc-video-rank">01</div>
+            <div>
+              <h3>每日赛前 10 分钟：如何看懂一场防守反击</h3>
+              <p>用三条横向走廊拆解攻防转换，配合今日赛程做临场预判。</p>
+              <div class="dc-video-foot">
+                <span>作者 沈砚之</span><span>08:42</span><span>播放 9.8 万</span>
+                <span class="dc-tag">教程干货</span>
+              </div>
+              <div class="dc-actions">
+                <button class="dc-mini-btn dc-like" data-count="3980">♥ 点赞 <span>3980</span></button>
+                <button class="dc-mini-btn dc-fav">☆ 收藏</button>
+              </div>
+            </div>
+          </article>
+          <article class="dc-video-item">
+            <div class="dc-video-rank">02</div>
+            <div>
+              <h3>新人观察：三位首次进入首发名单的年轻选手</h3>
+              <p>从训练日常到上场前的更衣室，记录他们第一场正式比赛的心情。</p>
+              <div class="dc-video-foot">
+                <span>作者 周小遥</span><span>14:20</span><span>播放 7.2 万</span>
+                <span class="dc-tag">人物访谈</span>
+              </div>
+              <div class="dc-actions">
+                <button class="dc-mini-btn dc-like" data-count="2650">♥ 点赞 <span>2650</span></button>
+                <button class="dc-mini-btn dc-fav">☆ 收藏</button>
+              </div>
+            </div>
+          </article>
+          <article class="dc-video-item">
+            <div class="dc-video-rank">03</div>
+            <div>
+              <h3>赛场之外：球馆后勤的 12 小时</h3>
+              <p>灯光、地板、记分牌与观众席，一场比赛开始前有多少人在忙碌。</p>
+              <div class="dc-video-foot">
+                <span>作者 顾一川</span><span>11:06</span><span>播放 5.4 万</span>
+                <span class="dc-tag">创作幕后</span>
+              </div>
+              <div class="dc-actions">
+                <button class="dc-mini-btn dc-like" data-count="1870">♥ 点赞 <span>1870</span></button>
+                <button class="dc-mini-btn dc-fav">☆ 收藏</button>
+              </div>
+            </div>
+          </article>
+          <article class="dc-video-item">
+            <div class="dc-video-rank">04</div>
+            <div>
+              <h3>一分钟战术板：三次边路传中的落点差异</h3>
+              <p>慢镜头逐帧对比，把抽象的战术术语变成看得懂的画面。</p>
+              <div class="dc-video-foot">
+                <span>作者 梁知微</span><span>01:12</span><span>播放 4.1 万</span>
+                <span class="dc-tag">知识科普</span>
+              </div>
+              <div class="dc-actions">
+                <button class="dc-mini-btn dc-like" data-count="1420">♥ 点赞 <span>1420</span></button>
+                <button class="dc-mini-btn dc-fav">☆ 收藏</button>
+              </div>
+            </div>
+          </article>
+          <article class="dc-video-item">
+            <div class="dc-video-rank">05</div>
+            <div>
+              <h3>球迷看台声音采样：一首助威歌的三种唱法</h3>
+              <p>把手机录音与专业收音混剪，还原现场最真实的一层声浪。</p>
+              <div class="dc-video-foot">
+                <span>作者 林北岸</span><span>06:30</span><span>播放 3.6 万</span>
+                <span class="dc-tag">城市探索</span>
+              </div>
+              <div class="dc-actions">
+                <button class="dc-mini-btn dc-like" data-count="1180">♥ 点赞 <span>1180</span></button>
+                <button class="dc-mini-btn dc-fav">☆ 收藏</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S4 品牌深度解析（关键词解析 800 字以上） -->
+  <section class="dc-section dc-scroll-offset" id="dcArticle">
+    <div class="dc-wrap dc-article">
+      <span class="dc-kicker">Brand Deep Dive</span>
+      <h2>为什么“每天比赛在线观看”值得成为你的固定习惯</h2>
+      <p>作为持续运营的体育视频品牌，每日赛场把“每天比赛在线观看”从一句搜索词，变成一套可以被长期依赖的内容服务。我们没有把官网做成一台只会搬运画面的机器，而是围绕赛事建立了一条从信息、影像到社区反馈的完整链路。下面从四个角度，讲清楚这套体系究竟是怎样运转的。</p>
+
+      <h3>一、每天，究竟“新”在哪里</h3>
+      <p>“每天”不是一句口号，而是一套具体的排期。以 11 月 22 日为例，官网在上午 10 点前完成当日赛程与对阵信息的更新，中午 12 点上线「每日赛前 10 分钟」解析栏目，开赛前 30 分钟推送首发名单与看点摘要，比赛结束后 20 分钟内上线含解说的高清回放，午夜前再补齐三分钟精华与战术复盘。观众打开首页，看到的不是一堆杂乱无章的推荐位，而是一条对应当天时间轴的内容序列。</p>
+      <p>这套排期由编辑部、转播组与社区运营三方共同维护。编辑负责选题与文案，转播组负责画面与字幕，社区运营则把当天讨论度高的片段回流到首页。我们坚持<strong>每天比赛在线观看</strong>的内容不做简单堆叠：同一天的重复素材会被合并，重复切片会被降权，保证你看到的每一条都尽量有信息增量。对用户来说，这意味着打开官网就能看到一个清晰的“今天看什么”的答案。</p>
+
+      <h3>二、在线观看的体验细节：从清晰度到节奏感</h3>
+      <p>“在线”意味着流畅与稳定。官网的回放采用自适应清晰度，网络波动时会先降码率再恢复，尽量减少卡顿；关键回合会预置章节标记，观众可以直接跳到任意一节最后五分钟。播放页保留原始解说音轨，同时提供静音解说版，方便不想被打扰的观众自己看画面。我们还为移动端重新调整了字幕字号与按钮热区，单手操作也能完成暂停、快进与收藏。</p>
+      <p>我们在产品上做了几件看起来很小、但直接影响观看节奏的事：第一，进度条上标注得分节点，拖动时能立刻知道落在哪个阶段；第二，回放默认从开赛前 30 秒开始，避免错过入场仪式；第三，收藏夹支持按赛事、作者与标签分类，下次打开能接着看。正是这些细节，让<strong>每天比赛在线观看</strong>不再是一次性的搜索行为，而变成可以养成的日常习惯。</p>
+      <p>另外，官网对无障碍访问做了基础适配：所有封面图都有具体的替代文字描述，操作按钮保留明显的焦点样式，重要信息不只依赖颜色区分。我们希望这项服务对更多人友好，这也是一个内容品牌应有的社会责任。</p>
+
+      <h3>三、免费观看背后的内容生态</h3>
+      <p>免费不等于低质。我们把成本结构拆成三块：正版授权的赛事素材、自制解析与访谈内容、社区创作者的二次创作。前两块由官方团队持续投入，第三块则由开放投稿机制支撑。创作者上传自己的赛场记录、战术解读或看台观察，通过审核后进入内容池，按播放与互动获得激励。这样做的结果是，官网既有专业的官方视角，也保留了大量真实、带着个人温度的民间影像。</p>
+      <p>为了让生态更健康，我们建立了三条基本规则：素材必须来源清晰，二次创作需注明原始出处；标题与封面不得夸大事实，避免误导；涉及选手与观众的画面需尊重个人意愿。规则并不复杂，但它决定了<strong>每天比赛在线观看</strong>的内容能不能长期被信任。过去一年，社区里有超过 36 万位创作者参与投稿，他们贡献了官网近四成的短内容，也让“每天”真正有了源源不断的新鲜素材。</p>
+
+      <h3>四、品牌、口碑与长期主义</h3>
+      <p>作为一个企业品牌，我们更在意三五年之后的评价，而不是某一天的流量。每日赛场的官网首页会长期保留品牌故事、企业动态与帮助中心，把“我们是谁、我们怎么做、遇到问题怎么办”讲清楚。用户在选择一个免费观看平台时，往往关心的不是花哨的功能，而是它是否稳定、是否尊重版权、是否愿意为体验持续迭代。口碑正是从这些笨功夫里长出来的。</p>
+      <p>在行业观察层面，我们也看到免费赛事内容正在从“抢首发”转向“拼理解”。观众已经不满足于只看比分，他们想知道换人的理由、战术的变化、选手的情绪。未来，官网会把更多资源投入到解析类与访谈类内容，让<strong>每天比赛在线观看</strong>这件事不仅有画面，也有解释和陪伴。我们希望它能成为你每天固定打开一次的地方，看到一个真实、专业、有温度的赛场。</p>
+
+      <div class="dc-article-extra">
+        <div class="dc-note-card">
+          <h4>更新节奏</h4>
+          <p>每日 10:00 赛程、12:00 解析、赛前 30 分钟首发、赛后 20 分钟回放，四个固定节点。</p>
+        </div>
+        <div class="dc-note-card">
+          <h4>版权原则</h4>
+          <p>官方素材正版授权，社区二创需注明出处，争议内容 24 小时内响应处理。</p>
+        </div>
+        <div class="dc-note-card">
+          <h4>社区激励</h4>
+          <p>投稿通过审核后进入内容池，按播放与互动获得激励，季度评选优质创作者。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S4 专题企划 -->
+  <section class="dc-section dc-scroll-offset" id="dcTopics">
+    <div class="dc-wrap">
+      <div class="dc-section-head">
+        <div>
+          <span class="dc-kicker">Special Projects</span>
+          <h2>每天比赛在线观看的专题企划</h2>
+          <p>围绕赛事延伸出的长期企划，从城市看台到战术课堂，把零散的内容组织成可追踪的系列。每个专题持续更新，欢迎社区创作者参与共创。</p>
+        </div>
+      </div>
+      <div class="dc-topic-grid">
+        <article class="dc-topic">
+          <div class="dc-topic-media">
+            <svg viewBox="0 0 560 315" role="img" aria-label="城市看台专题封面，夜晚球场外的观众排队入场">
+              <defs>
+                <linearGradient id="dcTp1" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#122c44"/><stop offset="1" stop-color="#203d2f"/>
+                </linearGradient>
+              </defs>
+              <rect width="560" height="315" fill="url(#dcTp1)"/>
+              <rect x="40" y="52" width="480" height="150" rx="8" fill="#081a27" stroke="#2a5a72"/>
+              <g fill="#ffcf5c" opacity=".85">
+                <rect x="70" y="76" width="26" height="26" rx="4"/><rect x="118" y="76" width="26" height="26" rx="4"/>
+                <rect x="166" y="76" width="26" height="26" rx="4"/><rect x="214" y="76" width="26" height="26" rx="4"/>
+                <rect x="320" y="76" width="26" height="26" rx="4"/><rect x="368" y="76" width="26" height="26" rx="4"/>
+                <rect x="416" y="76" width="26" height="26" rx="4"/><rect x="464" y="76" width="26" height="26" rx="4"/>
+              </g>
+              <g fill="#36e3b0" opacity=".9">
+                <circle cx="120" cy="240" r="12"/><circle cx="180" cy="252" r="12"/>
+                <circle cx="250" cy="236" r="12"/><circle cx="330" cy="250" r="12"/>
+                <circle cx="410" cy="240" r="12"/><circle cx="470" cy="254" r="12"/>
+              </g>
+              <g fill="#9db2c9">
+                <rect x="114" y="252" width="12" height="34" rx="5"/><rect x="174" y="264" width="12" height="34" rx="5"/>
+                <rect x="244" y="248" width="12" height="34" rx="5"/><rect x="324" y="262" width="12" height="34" rx="5"/>
+                <rect x="404" y="252" width="12" height="34" rx="5"/><rect x="464" y="266" width="12" height="34" rx="5"/>
+              </g>
+              <rect y="286" width="560" height="29" fill="#04141f"/>
+            </svg>
+          </div>
+          <span class="dc-topic-status">连载中 · 已更新 18 期</span>
+          <h3>城市看台：一场比赛周围的十二种职业</h3>
+          <p>从售票员到场地维护，走进比赛日的光环之外，看看一座球馆是如何被撑起来的。</p>
+          <ol>
+            <li>第 16 期：开场前四小时，灯光师的最后一轮巡检</li>
+            <li>第 17 期：环形看台的声音是怎样被收进话筒的</li>
+            <li>第 18 期：终场后打扫看台的六个小时</li>
+          </ol>
+        </article>
+
+        <article class="dc-topic">
+          <div class="dc-topic-media">
+            <svg viewBox="0 0 560 315" role="img" aria-label="战术课堂专题封面，球场战术板与移动路线示意">
+              <rect width="560" height="315" fill="#0c2033"/>
+              <rect x="36" y="36" width="488" height="243" rx="10" fill="#0e3a2f" stroke="#36e3b0" stroke-opacity=".55" stroke-width="2"/>
+              <line x1="36" y1="158" x2="524" y2="158" stroke="#8ff0d3" stroke-opacity=".6" stroke-width="2"/>
+              <circle cx="280" cy="158" r="46" fill="none" stroke="#8ff0d3" stroke-opacity=".6" stroke-width="2"/>
+              <rect x="36" y="96" width="66" height="124" fill="none" stroke="#8ff0d3" stroke-opacity=".6" stroke-width="2"/>
+              <rect x="458" y="96" width="66" height="124" fill="none" stroke="#8ff0d3" stroke-opacity=".6" stroke-width="2"/>
+              <path d="M140 220 Q220 120 330 150 Q420 175 470 110" fill="none" stroke="#ffcf5c" stroke-width="3" stroke-dasharray="9 7"/>
+              <g fill="#4aa8ff"><circle cx="140" cy="220" r="10"/><circle cx="330" cy="150" r="10"/></g>
+              <g fill="#ffcf5c"><circle cx="470" cy="110" r="10"/></g>
+              <text x="52" y="266" fill="#8ff0d3" font-size="13" font-family="monospace">TACTICS BOARD · EP.09</text>
+            </svg>
+          </div>
+          <span class="dc-topic-status">更新中 · 每周三上新</span>
+          <h3>战术课堂：把术语翻译成画面</h3>
+          <p>用慢镜头和手绘路线，把高位压迫、边中结合这些词变成看得懂的回合。</p>
+          <ol>
+            <li>第 07 期：为什么换人之后进攻突然变顺了</li>
+            <li>第 08 期：一次成功的反击需要几秒</li>
+            <li>第 09 期：从站位图读懂教练的意图</li>
+          </ol>
+        </article>
+
+        <article class="dc-topic">
+          <div class="dc-topic-media">
+            <svg viewBox="0 0 560 315" role="img" aria-label="新人记录专题封面，更衣室走廊尽头的年轻选手剪影">
+              <defs>
+                <linearGradient id="dcTp3" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#22183a"/><stop offset="1" stop-color="#0c2033"/>
+                </linearGradient>
+              </defs>
+              <rect width="560" height="315" fill="url(#dcTp3)"/>
+              <rect x="150" y="40" width="260" height="235" rx="6" fill="#061726" stroke="#4aa8ff" stroke-opacity=".4"/>
+              <rect x="186" y="80" width="188" height="195" fill="#0f3550" opacity=".8"/>
+              <g fill="#c9e3ff">
+                <circle cx="276" cy="168" r="19"/>
+                <rect x="256" y="190" width="40" height="85" rx="14"/>
+              </g>
+              <circle cx="276" cy="118" r="42" fill="none" stroke="#36e3b0" stroke-opacity=".5" stroke-width="2"/>
+              <g fill="#ffcf5c" opacity=".8">
+                <circle cx="90" cy="90" r="4"/><circle cx="470" cy="130" r="4"/><circle cx="120" cy="240" r="4"/>
+              </g>
+            </svg>
+          </div>
+          <span class="dc-topic-status">众筹创作 · 投稿开放</span>
+          <h3>新人记录：第一次上场的九十分钟</h3>
+          <p>追踪年轻选手的首次首发，从训练营到混采区，记录紧张、兴奋与成长。</p>
+          <ol>
+            <li>第一集：名单公布的那个晚饭时间</li>
+            <li>第二集：热身时的第一脚触球</li>
+            <li>第三集：赛后更衣室里的三句对话</li>
+          </ol>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- S5 创作者矩阵 双列简介 -->
+  <section class="dc-section dc-scroll-offset" id="dcAuthors">
+    <div class="dc-wrap">
+      <div class="dc-section-head">
+        <div>
+          <span class="dc-kicker">Creators</span>
+          <h2>每天比赛在线观看的创作者矩阵</h2>
+          <p>他们有的专注战术拆解，有的记录看台声浪，有的把镜头对准赛场之外。平台为创作者提供拍摄支持与流量扶持，让每一种视角都有被看见的机会。</p>
+        </div>
+      </div>
+      <div class="dc-author-grid">
+        <article class="dc-author-card">
+          <div class="dc-avatar" style="background:linear-gradient(140deg,#36e3b0,#22c9a8)">林</div>
+          <div class="dc-author-body">
+            <div class="dc-author-name"><b>林北岸</b><span>官方签约</span></div>
+            <p>擅长用长镜头记录整场比赛的情绪起伏，常用多机位混剪还原现场。做过五年独立纪录片，相信赛场最动人的部分往往发生在镜头边缘。</p>
+            <div class="dc-author-facts"><span>擅长 赛事记录</span><span>作品 <b>128</b></span><span>粉丝 <b>18.2万</b></span></div>
+          </div>
+        </article>
+        <article class="dc-author-card">
+          <div class="dc-avatar" style="background:linear-gradient(140deg,#4aa8ff,#3178c6)">沈</div>
+          <div class="dc-author-body">
+            <div class="dc-author-name"><b>沈砚之</b><span>战术作者</span></div>
+            <p>前校队教练，现在专注把战术术语讲成人话。视频里常见手绘板和慢镜头逐帧，他坚持每个判断都要有画面依据，不凭感觉下结论。</p>
+            <div class="dc-author-facts"><span>擅长 战术解析</span><span>作品 <b>96</b></span><span>粉丝 <b>12.6万</b></span></div>
+          </div>
+        </article>
+        <article class="dc-author-card">
+          <div class="dc-avatar" style="background:linear-gradient(140deg,#ffcf5c,#e0a92e);color:#3a2a00">周</div>
+          <div class="dc-author-body">
+            <div class="dc-author-name"><b>周小遥</b><span>人物访谈</span></div>
+            <p>做选手访谈三年，擅长在混采区之外找到更松弛的时刻。她的镜头里很少追问成绩，更多是问最近睡得怎么样、家里人有没有来看比赛。</p>
+            <div class="dc-author-facts"><span>擅长 人物访谈</span><span>作品 <b>74</b></span><span>粉丝 <b>9.8万</b></span></div>
+          </div>
+        </article>
+        <article class="dc-author-card">
+          <div class="dc-avatar" style="background:linear-gradient(140deg,#a78bfa,#6d5bd0)">顾</div>
+          <div class="dc-author-body">
+            <div class="dc-author-name"><b>顾一川</b><span>幕后记录</span></div>
+            <p>关注比赛背后的普通人，拍过球馆保洁、器材管理员和班车司机。他认为一场比赛的完整故事，应该包括那些不会被记分牌写下的名字。</p>
+            <div class="dc-author-facts"><span>擅长 创作幕后</span><span>作品 <b>61</b></span><span>粉丝 <b>7.4万</b></span></div>
+          </div>
+        </article>
+        <article class="dc-author-card">
+          <div class="dc-avatar" style="background:linear-gradient(140deg,#5fe0bd,#2fa88b)">梁</div>
+          <div class="dc-author-body">
+            <div class="dc-author-name"><b>梁知微</b><span>知识科普</span></div>
+            <p>做一分钟以内的短科普，用动画把规则和判罚讲清楚。她说最难的不是讲深，而是讲短，脚本常常要改十几稿才敢发出来。</p>
+            <div class="dc-author-facts"><span>擅长 知识科普</span><span>作品 <b>142</b></span><span>粉丝 <b>15.1万</b></span></div>
+          </div>
+        </article>
+        <article class="dc-author-card">
+          <div class="dc-avatar" style="background:linear-gradient(140deg,#ff8fa3,#d95d78)">许</div>
+          <div class="dc-author-body">
+            <div class="dc-author-name"><b>许知野</b><span>新晋创作者</span></div>
+            <p>以手机竖屏记录看台文化，声音采样和人群特写是她的标志。今年刚从观众变成创作者，第一条投稿就进入了官网精选。</p>
+            <div class="dc-author-facts"><span>擅长 城市探索</span><span>作品 <b>23</b></span><span>粉丝 <b>3.6万</b></span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- S6 评价 评分摘要 + 双列短评 -->
+  <section class="dc-section dc-scroll-offset" id="dcComments">
+    <div class="dc-wrap">
+      <div class="dc-section-head">
+        <div>
+          <span class="dc-kicker">Community Voice</span>
+          <h2>用户眼中的每天比赛在线观看</h2>
+          <p>口碑来自每一次真实的观看。评分由社区用户自愿提交，评论未经修饰保留原样，帮助我们持续改进内容与体验。</p>
+        </div>
+      </div>
+
+      <div class="dc-score-summary">
+        <div class="dc-score-big">
+          <b>4.9</b>
+          <span>综合评分 · 2.6 万人参与</span>
+        </div>
+        <div class="dc-score-bars">
+          <div class="dc-bar"><span>画质</span><div class="dc-bar-track"><div class="dc-bar-fill" style="width:96%"></div></div><span>4.8</span></div>
+          <div class="dc-bar"><span>更新</span><div class="dc-bar-track"><div class="dc-bar-fill" style="width:98%"></div></div><span>4.9</span></div>
+          <div class="dc-bar"><span>解说</span><div class="dc-bar-track"><div class="dc-bar-fill" style="width:94%"></div></div><span>4.7</span></div>
+          <div class="dc-bar"><span>社区</span><div class="dc-bar-track"><div class="dc-bar-fill" style="width:92%"></div></div><span>4.6</span></div>
+        </div>
+      </div>
+
+      <div class="dc-comment-grid">
+        <div class="dc-comment">
+          <div class="dc-comment-top"><b>看台第七排</b><span>11月22日</span></div>
+          <div class="dc-stars">★★★★★</div>
+          <p>下班回家已经十点半，还能直接找到今天的全场回放，章节标记很实用，直接跳到最后一节看完再睡。</p>
+        </div>
+        <div class="dc-comment">
+          <div class="dc-comment-top"><b>橘子汽水不加冰</b><span>11月21日</span></div>
+          <div class="dc-stars">★★★★★</div>
+          <p>最喜欢赛前十分钟那个栏目，讲得很克制，不吹不黑，看完再看比赛会留意到很多以前忽略的细节。</p>
+        </div>
+        <div class="dc-comment">
+          <div class="dc-comment-top"><b>老李头看球</b><span>11月20日</span></div>
+          <div class="dc-stars">★★★★☆</div>
+          <p>整体很好，画质稳定。唯一想提的是希望增加一个只看关键回合的模式，年纪大了看全场有点跟不完。</p>
+        </div>
+        <div class="dc-comment">
+          <div class="dc-comment-top"><b>南城小许</b><span>11月20日</span></div>
+          <div class="dc-stars">★★★★★</div>
+          <p>作为新创作者，第一次投稿就被放进了专题，编辑还给了修改建议。这种被认真对待的感觉挺难得的。</p>
+        </div>
+        <div class="dc-comment">
+          <div class="dc-comment-top"><b>夜航船</b><span>11月19日</span></div>
+          <div class="dc-stars">★★★★☆</div>
+          <p>免费还能有这个清晰度确实不容易，就是热点比赛的时候加载会慢一点点，希望能再多加点带宽。</p>
+        </div>
+        <div class="dc-comment">
+          <div class="dc-comment-top"><b>战术板爱好者</b><span>11月18日</span></div>
+          <div class="dc-stars">★★★★★</div>
+          <p>从沈砚之的战术课一路追过来的，现在每期必看。把抽象的东西讲明白，这本身就是门槛很高的能力。</p>
+        </div>
+        <div class="dc-comment">
+          <div class="dc-comment-top"><b>周末去看球</b><span>11月17日</span></div>
+          <div class="dc-stars">★★★★★</div>
+          <p>城市看台那个专题真的拍出了味道，看完之后再去现场，会不自觉地留意那些以前完全不会注意的人。</p>
+        </div>
+        <div class="dc-comment">
+          <div class="dc-comment-top"><b>一颗安静的球</b><span>11月16日</span></div>
+          <div class="dc-stars">★★★★☆</div>
+          <p>客服响应挺快，之前反馈字幕遮挡问题，第二天就更新了样式。虽然是小问题，但处理得让人舒服。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S7 企业动态 -->
+  <section class="dc-section dc-scroll-offset" id="dcNews">
+    <div class="dc-wrap">
+      <div class="dc-section-head">
+        <div>
+          <span class="dc-kicker">Official News</span>
+          <h2>企业动态与官方发布</h2>
+          <p>关于平台运营、功能更新与合作计划的最新消息，均在官网第一时间发布，欢迎关注。</p>
+        </div>
+      </div>
+      <div class="dc-news-grid">
+        <article class="dc-news-item">
+          <time>2026 / 11 / 22</time>
+          <h3>「每日赛前 10 分钟」正式上线</h3>
+          <p>全新解析栏目每日中午更新，免费向所有用户开放，首周将覆盖六场重点赛程。</p>
+        </article>
+        <article class="dc-news-item">
+          <time>2026 / 11 / 18</time>
+          <h3>回放播放器支持章节跳转</h3>
+          <p>进度条新增得分节点标记，观众可直接定位关键回合，移动端同步优化了按钮热区。</p>
+        </article>
+        <article class="dc-news-item">
+          <time>2026 / 11 / 12</time>
+          <h3>创作者扶持计划第二期报名开启</h3>
+          <p>面向赛场记录与战术解析方向，入选创作者将获得拍摄设备支持与专题推荐位。</p>
+        </article>
+        <article class="dc-news-item">
+          <time>2026 / 11 / 05</time>
+          <h3>与三座城市球馆达成内容合作</h3>
+          <p>合作将覆盖场馆纪实、球迷活动与幕后探访，进一步丰富城市看台专题的素材来源。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- S7 创作灵感 + 投稿 -->
+  <section class="dc-section dc-scroll-offset" id="dcSubmit">
+    <div class="dc-wrap">
+      <div class="dc-section-head">
+        <div>
+          <span class="dc-kicker">Create & Submit</span>
+          <h2>创作灵感与投稿入口</h2>
+          <p>不知道从哪拍起？这里有几条来自编辑部的选题建议，也欢迎把你的赛场影像投递给我们。</p>
+        </div>
+      </div>
+      <div class="dc-inspire-grid">
+        <div class="dc-inspire-list">
+          <div class="dc-inspire-item">
+            <div class="dc-icon-chip">01</div>
+            <div>
+              <b>拍一个“赛前两小时”的时间切片</b>
+              <p>固定机位记录球馆从空荡到坐满的过程，配上环境声即可，不需要解说。</p>
+            </div>
+          </div>
+          <div class="dc-inspire-item">
+            <div class="dc-icon-chip">02</div>
+            <div>
+              <b>给一位普通观众做三分钟小传</b>
+              <p>问他为什么来看这场比赛、支持了多久，真实回答往往比精剪更有力量。</p>
+            </div>
+          </div>
+          <div class="dc-inspire-item">
+            <div class="dc-icon-chip">03</div>
+            <div>
+              <b>用一条路线讲清楚一次进攻</b>
+              <p>手绘箭头加慢镜头，重点不是专业，而是让没看过比赛的人也听懂。</p>
+            </div>
+          </div>
+          <div class="dc-inspire-item">
+            <div class="dc-icon-chip">04</div>
+            <div>
+              <b>收集同一种声音的十个版本</b>
+              <p>助威、哨声、球鞋摩擦，把现场声音做成一段可听的短影像。</p>
+            </div>
+          </div>
+        </div>
+        <div class="dc-submit-card">
+          <h3>把你的赛场影像交给更多人看见</h3>
+          <p>每天比赛在线观看的内容池长期开放投稿，无论你是拍了一整场，还是只录下一段三十秒的看台合唱，都值得被认真对待。</p>
+          <ul>
+            <li>支持横屏与竖屏，建议 1080P 以上清晰度</li>
+            <li>需注明拍摄时间、地点与素材来源</li>
+            <li>审核周期通常为 3 个工作日</li>
+            <li>通过后进入官网内容池，参与季度激励评选</li>
+          </ul>
+          <button class="dc-btn dc-btn-primary" id="dcSubmitBtn">打开投稿表单</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S7 FAQ -->
+  <section class="dc-section dc-scroll-offset" id="dcFaq">
+    <div class="dc-wrap">
+      <div class="dc-section-head">
+        <div>
+          <span class="dc-kicker">Help Center</span>
+          <h2>关于每天比赛在线观看的常见问题</h2>
+          <p>如果你在使用官网时遇到问题，可以先看看这里的解答，也欢迎通过页脚的联系方式找到我们。</p>
+        </div>
+      </div>
+      <div class="dc-faq">
+        <details open>
+          <summary>观看比赛回放需要付费或注册吗？</summary>
+          <p>不需要。官网的每日回放与多数解析内容均可免费观看，无需注册账号；注册后可以收藏内容、参与评论与投稿。</p>
+        </details>
+        <details>
+          <summary>每天的比赛内容大概什么时候更新？</summary>
+          <p>赛程与对阵信息通常上午 10 点前更新，赛前解析中午 12 点上线，赛后回放一般在比赛结束后 20 分钟内发布，精华与复盘在午夜前补齐。</p>
+        </details>
+        <details>
+          <summary>回放画面卡顿应该怎么处理？</summary>
+          <p>播放器会根据网络自动调整清晰度。如仍卡顿，可尝试切换至较低清晰度、关闭其他占用带宽的应用，或更换网络环境后刷新页面。</p>
+        </details>
+        <details>
+          <summary>我可以把自己拍的比赛视频投稿到官网吗？</summary>
+          <p>可以。通过投稿入口提交，需保证素材来源清晰并注明拍摄信息。审核通过后内容会进入官网内容池，参与季度创作者激励评选。</p>
+        </details>
+        <details>
+          <summary>平台如何保证内容的版权合规？</summary>
+          <p>官方赛事素材均取得正版授权，社区二次创作需注明原始出处。收到版权异议后，我们会在 24 小时内核实并处理相关内容。</p>
+        </details>
+        <details>
+          <summary>为什么有些比赛只有精华没有全场回放？</summary>
+          <p>部分赛事的转播权范围仅覆盖精华片段，我们会在内容页明确标注可观看范围，避免误导观众。</p>
+        </details>
+        <details>
+          <summary>如何反馈播放问题或内容建议？</summary>
+          <p>可在页脚找到反馈邮箱，或在任意内容页使用反馈按钮提交。我们会记录每一条反馈，并在版本更新说明中同步处理进展。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="dc-footer">
+  <div class="dc-wrap">
+    <div class="dc-footer-grid">
+      <div>
+        <div class="dc-brand" style="margin-bottom:12px">
+          <div class="dc-brand-mark">每</div>
+          <div class="dc-brand-text"><strong>每日赛场</strong><span>DAILY ARENA</span></div>
+        </div>
+        <p>每日赛场是每天比赛在线观看的官方视频品牌门户，专注赛事影像、战术解析与创作者社区，坚持原创、正版与高清，为体育爱好者提供值得信赖的免费内容服务。</p>
+      </div>
+      <div>
+        <h4>内容导航</h4>
+        <ul>
+          <li><a href="#dcFocus">今日焦点</a></li>
+          <li><a href="#dcArticle">品牌解读</a></li>
+          <li><a href="#dcTopics">专题企划</a></li>
+          <li><a href="#dcAuthors">创作者矩阵</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>社区与帮助</h4>
+        <ul>
+          <li><a href="#dcComments">社区口碑</a></li>
+          <li><a href="#dcNews">企业动态</a></li>
+          <li><a href="#dcSubmit">投稿入口</a></li>
+          <li><a href="#dcFaq">帮助中心</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>联系我们</h4>
+        <ul>
+          <li>内容合作：partner@dailyarena.example</li>
+          <li>投稿咨询：create@dailyarena.example</li>
+          <li>用户反馈：support@dailyarena.example</li>
+          <li>工作时间：周一至周日 09:00 - 22:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="dc-footer-bottom">
+      <span>© 2026 每日赛场 官方网站 · 版权所有 · 持续运营中</span>
+      <span>内容均为原创或正版授权 · 备案号 京ICP备2026000000号-1</span>
+    </div>
+  </div>
+</footer>
+
+<div class="dc-modal-mask" id="dcModalMask" role="dialog" aria-modal="true" aria-labelledby="dcModalTitle">
+  <div class="dc-modal">
+    <h3 id="dcModalTitle">提示</h3>
+    <p id="dcModalBody">内容加载中。</p>
+    <button class="dc-modal-close" id="dcModalClose">知道了</button>
+  </div>
+</div>
+<div class="dc-toast" id="dcToast">已复制链接</div>
+<button class="dc-to-top" id="dcToTop" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  var menuToggle = document.getElementById('dcMenuToggle');
+  var mainNav = document.getElementById('dcMainNav');
+  menuToggle.addEventListener('click', function(){
+    var open = mainNav.classList.toggle('dc-open');
+    menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    menuToggle.textContent = open ? '关闭 ✕' : '菜单 ☰';
+  });
+  mainNav.addEventListener('click', function(e){
+    if(e.target.tagName === 'A' && window.innerWidth <= 760){
+      mainNav.classList.remove('dc-open');
+      menuToggle.setAttribute('aria-expanded','false');
+      menuToggle.textContent = '菜单 ☰';
+    }
+  });
+
+  var searchInput = document.getElementById('dcSearchInput');
+  var searchBtn = document.getElementById('dcSearchBtn');
+  var searchHint = document.getElementById('dcSearchHint');
+  var pool = ['城市联赛 第14轮 全场回放','每日赛前 10 分钟','战术课堂 第09期','沈砚之 战术解析','周小遥 新人访谈','城市看台 专题','梁知微 一分钟战术板','许知野 看台声音采样'];
+  function doSearch(){
+    var q = searchInput.value.trim();
+    if(!q){
+      searchHint.innerHTML = '试试搜索：<b>今日回放</b>、<b>战术解析</b>、<b>创作者</b>';
+    }else{
+      var hit = pool.filter(function(s){ return s.indexOf(q) !== -1; });
+      if(hit.length){
+        searchHint.innerHTML = '为你找到 ' + hit.length + ' 条相关内容：<b>' + hit.slice(0,3).join('</b>、<b>') + '</b>';
+      }else{
+        searchHint.innerHTML = '暂未匹配到「<b>' + q.replace(/[<>&]/g,'') + '</b>」，已为你跳转至今日焦点，可继续浏览。';
+      }
+    }
+    searchHint.classList.add('dc-show');
+  }
+  searchBtn.addEventListener('click', doSearch);
+  searchInput.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ doSearch(); } });
+  searchInput.addEventListener('input', function(){
+    if(!searchInput.value){ searchHint.classList.remove('dc-show'); }
+  });
+
+  var toast = document.getElementById('dcToast');
+  var toastTimer = null;
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add('dc-show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('dc-show'); }, 2200);
+  }
+
+  document.addEventListener('click', function(e){
+    var likeBtn = e.target.closest('.dc-like');
+    if(likeBtn){
+      var span = likeBtn.querySelector('span');
+      var base = parseInt(likeBtn.getAttribute('data-count'), 10) || 0;
+      var active = likeBtn.classList.toggle('dc-active');
+      var now = base + (active ? 1 : 0);
+      likeBtn.setAttribute('data-count', now);
+      span.textContent = now >= 10000 ? (now/10000).toFixed(1) + '万' : now;
+      showToast(active ? '已点赞' : '已取消点赞');
+      return;
+    }
+    var favBtn = e.target.closest('.dc-fav');
+    if(favBtn){
+      var on = favBtn.classList.toggle('dc-active');
+      favBtn.textContent = on ? '★ 已收藏' : '☆ 收藏';
+      showToast(on ? '已加入收藏' : '已取消收藏');
+      return;
+    }
+    var shareBtn = e.target.closest('.dc-share');
+    if(shareBtn){
+      var link = 'https://dailyarena.example/video/' + Math.random().toString(36).slice(2,8);
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(link).then(function(){ showToast('链接已复制，可分享给朋友'); }, function(){ showToast('复制失败，请手动选择链接'); });
+      }else{
+        showToast('已生成分享链接：' + link);
+      }
+      return;
+    }
+  });
+
+  var modalMask = document.getElementById('dcModalMask');
+  var modalTitle = document.getElementById('dcModalTitle');
+  var modalBody = document.getElementById('dcModalBody');
+  function openModal(title, body){
+    modalTitle.textContent = title;
+    modalBody.textContent = body;
+    modalMask.classList.add('dc-show');
+  }
+  document.getElementById('dcModalClose').addEventListener('click', function(){ modalMask.classList.remove('dc-show'); });
+  modalMask.addEventListener('click', function(e){ if(e.target === modalMask){ modalMask.classList.remove('dc-show'); } });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ modalMask.classList.remove('dc-show'); } });
+
+  document.getElementById('dcSubmitBtn').addEventListener('click', function(){
+    openModal('投稿入口已开启', '请准备以下信息：视频文件或链接、拍摄时间与地点、素材来源说明、简要内容介绍。提交后 3 个工作日内会收到审核结果，通过后可参与季度创作者激励评选。');
+  });
+
+  var toTop = document.getElementById('dcToTop');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 600){ toTop.classList.add('dc-show'); }else{ toTop.classList.remove('dc-show'); }
+  }, {passive:true});
+  toTop.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+
+  var sections = document.querySelectorAll('main section[id]');
+  var navLinks = mainNav.querySelectorAll('a');
+  window.addEventListener('scroll', function(){
+    var pos = window.scrollY + 180, current = '';
+    sections.forEach(function(sec){ if(sec.offsetTop <= pos){ current = sec.id; } });
+    navLinks.forEach(function(a){
+      a.classList.toggle('dc-current', a.getAttribute('href') === '#' + current);
+    });
+  }, {passive:true});
+})();
+</script>
+</body>
+  </html>
